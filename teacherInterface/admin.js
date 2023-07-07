@@ -2013,6 +2013,7 @@ function updateContestOptions(group) {
 }
 
 function newForm(modelName, title, message, item) {
+   console.log("TEST_LOG:",modelName, title)
    var js = "";
    var html = "<h2>" + title + "</h2>" + message +
       "<input type='hidden' id='" + modelName + "_ID' /><table>";
