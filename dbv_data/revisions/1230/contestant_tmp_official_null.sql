@@ -1,1 +1,1 @@
-ALTER TABLE `contestant` CHANGE `tmpIsOfficial` `tmpIsOfficial` TINYINT(4) NULL DEFAULT NULL;
+ALTER TABLE contestant ADD tmpIsOfficial TINYINT(4) NULL DEFAULT NULL;

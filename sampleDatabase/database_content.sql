@@ -1,37 +1,37 @@
 SET autocommit=0;
 START TRANSACTION;
 
-INSERT INTO `contest` (`ID`, `name`, `level`, `year`, `category`, `status`, `visibility`, `closedToOfficialGroups`, `printCertificates`, `printCodes`, `startDate`, `endDate`, `certificateStringsName`, `showResults`, `askEmail`, `askZip`, `askGenre`, `askGrade`, `askStudentId`, `nbMinutes`, `bonusScore`, `allowTeamsOfTwo`, `rankGrades`, `rankNbContestants`, `fullFeedback`, `nextQuestionAuto`, `nbUnlockedTasksInitial`, `subsetsSize`, `newInterface`, `customIntro`, `folder`, `minAward1Rank`, `minAward2Rank`, `iVersion`, `open`, `showSolutions`) VALUES
-(1, 'Entraînement 2011, niveau 6ème/5ème', 1, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_6_5_axafas', NULL, NULL, 33, 'Open', 0),
-(2, 'Entraînement 2011, niveau 4ème/3ème', 2, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_4_3_bswxt', NULL, NULL, 33, 'Open', 0),
-(3, 'Entraînement 2011, niveau 2nde', 3, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_2_sptbkxr', NULL, NULL, 33, 'Open', 0),
-(4, 'Entraînement 2011, niveau 1ère/terminale', 4, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_1_0_psxtybcr', NULL, NULL, 33, 'Open', 0),
-(6, 'Entraînement 2012, niveau 6ème/5ème', 1, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_6_5_faskfjb', NULL, NULL, 33, 'Open', 0),
-(7, 'Entraînement 2012, niveau 4ème/3ème', 2, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_4_3_aftnasktj', NULL, NULL, 33, 'Open', 0),
-(8, 'Entraînement 2012, niveau 2nde', 3, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_2_saffstbb', NULL, NULL, 33, 'Open', 0),
-(9, 'Entraînement 2012, niveau 1ère/terminale', 4, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_1_0_asftan', NULL, NULL, 33, 'Open', 0),
-(20, 'Entraînement 2012, tous les sujets', 0, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_all_saftrqthj', NULL, NULL, 33, 'Open', 0),
-(21, 'Entraînement 2011, tous les sujets', 0, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_all_atskjaktb', NULL, NULL, 33, 'Open', 0),
-(22, 'Entraînement 2010, tous les sujets', 0, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2010_all_astanjilk', NULL, NULL, 33, 'Open', 0),
-(23, 'Entraînement 2010, niveau 6ème/5ème', 1, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2010_6_5_stqnisak', NULL, NULL, 33, 'Open', 0),
-(24, 'Entraînement 2010, niveau 4ème/3ème', 2, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2010_4_3_sapfnu', NULL, NULL, 33, 'Open', 0),
-(25, 'Entraînement 2010, niveau 2nde', 3, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 0, 0, 1, 1, 0, 46, 50, 1, 0, 0, 0, 1, 4, 0, 0, '', '2010_2_sfjiajun', NULL, NULL, 206, 'Open', 0),
-(26, 'Entraînement 2010, niveau 1ère/terminale', 4, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, '', '2010_1_0_afkfinuj', NULL, NULL, 208, 'Open', 0),
-(27, 'Entraînement 2013, niveau 6ème/5ème', 1, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_6_5_safasc', NULL, NULL, 33, 'Open', 0),
-(28, 'Entraînement 2013, niveau seconde', 3, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_2_askdnr', NULL, NULL, 33, 'Open', 0),
-(29, 'Entraînement 2013, niveau 1ère/terminale', 4, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_1_0_arokasp.1480451016', NULL, NULL, 290, 'Open', 0),
-(30, 'Entraînement 2013, niveau 4ème/3ème', 2, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_4_3_wqpeds', NULL, NULL, 33, 'Open', 0),
-(31, 'Entraînement 2013, tous les sujets', 0, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_all_aopronf.1480451025', NULL, NULL, 290, 'Open', 0),
-(32, 'Entraînement 2014, niveau 6ème/5ème', 1, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_6_5_asknnc.1478452121', 10732, 571, 271, 'Open', 0),
-(33, 'Entraînement 2014, niveau 4ème/3ème', 2, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_4_3_rqrokp', 8141, 369, 33, 'Open', 0),
-(34, 'Entraînement 2014, niveau 2nde', 3, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_2_dpsdskj', 2088, 114, 33, 'Open', 0),
-(35, 'Entraînement 2014, niveau 1ère/terminale', 4, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_1_0_dokssax', 1801, 66, 33, 'Open', 0),
-(36, 'Entraînement 2014, niveau 2nde pro', 5, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_2_pro_wirjsnkc', 36, 1, 33, 'Open', 0),
-(37, 'Entraînement 2014, niveau 1ère/terminale pro', 6, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_1_0_pro_oakdsakj', 37, 2, 33, 'Open', 0),
-(51, 'Entraînement Algoréa 2015, premier tour', 0, 2015, 'Algoréa 2015 premier tour', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 0, 1, 0, 1, 1, 4, 0, 1, NULL, '2015_algorea_1_sakjlkjk', 0, 0, 33, 'Open', 0),
-(53, 'Entraînement adapté aux CM1/CM2', 0, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_expe_primaire_a', 0, 0, 33, 'Open', 0),
-(54, 'Concours Castor 2015, tous niveaux', 0, 2015, 'Castor 2015', 'PreRanking', 'Visible', 1, 1, 0, '1890-11-29 23:00:00', '1899-11-29 23:00:00', NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 1, 1, 1, 1, 4, 0, 1, '', '2015_castor_askjksajx', 0, 0, 214, 'Open', 0),
-(56, 'Entraînement 2015, tous niveaux', 0, 2015, 'Castor 2015', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 1, 1, 1, 1, 4, 0, 1, NULL, '2015_castor_ajakjtxnasj', 0, 0, 33, 'Open', 0);
+INSERT INTO `contest` (`ID`, `name`, `level`, `year`, `category`, `status`, `visibility`, `closedToOfficialGroups`, `printCertificates`, `printCodes`, `startDate`, `endDate`, `certificateStringsName`, `showResults`, `askEmail`, `askZip`, `askGenre`, `askGrade`, `askStudentId`, `nbMinutes`, `bonusScore`, `allowTeamsOfTwo`, `rankGrades`, `rankNbContestants`, `fullFeedback`, `nextQuestionAuto`, `nbUnlockedTasksInitial`, `subsetsSize`, `newInterface`, `customIntro`, `folder`, `minAward1Rank`, `minAward2Rank`, `iVersion`, `open`, `showSolutions`, `imageURL`, `headerImageURL`, `headerHTML`, `certificateTitle`) VALUES
+-- (1, 'Entraînement 2011, niveau 6ème/5ème', 1, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_6_5_axafas', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (2, 'Entraînement 2011, niveau 4ème/3ème', 2, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_4_3_bswxt', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (3, 'Entraînement 2011, niveau 2nde', 3, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_2_sptbkxr', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (4, 'Entraînement 2011, niveau 1ère/terminale', 4, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_1_0_psxtybcr', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (6, 'Entraînement 2012, niveau 6ème/5ème', 1, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_6_5_faskfjb', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (7, 'Entraînement 2012, niveau 4ème/3ème', 2, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_4_3_aftnasktj', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (8, 'Entraînement 2012, niveau 2nde', 3, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_2_saffstbb', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (9, 'Entraînement 2012, niveau 1ère/terminale', 4, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_1_0_asftan', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (20, 'Entraînement 2012, tous les sujets', 0, 2012, 'Castor 2012', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2012_all_saftrqthj', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (21, 'Entraînement 2011, tous les sujets', 0, 2011, 'Castor 2011', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2011_all_atskjaktb', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (22, 'Entraînement 2010, tous les sujets', 0, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2010_all_astanjilk', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (23, 'Entraînement 2010, niveau 6ème/5ème', 1, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2010_6_5_stqnisak', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (24, 'Entraînement 2010, niveau 4ème/3ème', 2, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2010_4_3_sapfnu', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+-- (25, 'Entraînement 2010, niveau 2nde', 3, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 0, 0, 1, 1, 0, 46, 50, 1, 0, 0, 0, 1, 4, 0, 0, '', '2010_2_sfjiajun', NULL, NULL, 206, 'Open', 0, '', '', '', ''),
+-- (26, 'Entraînement 2010, niveau 1ère/terminale', 4, 2010, 'Castor 2010', 'PastContest', 'Visible', 1, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, '', '2010_1_0_afkfinuj', NULL, NULL, 208, 'Open', 0, '', '', '', ''),
+(27, 'Entraînement 2013, niveau 6ème/5ème', 1, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_6_5_safasc', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+(28, 'Entraînement 2013, niveau seconde', 3, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_2_askdnr', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+(29, 'Entraînement 2013, niveau 1ère/terminale', 4, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_1_0_arokasp.1480451016', NULL, NULL, 290, 'Open', 0, '', '', '', ''),
+(30, 'Entraînement 2013, niveau 4ème/3ème', 2, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_4_3_wqpeds', NULL, NULL, 33, 'Open', 0, '', '', '', ''),
+(31, 'Entraînement 2013, tous les sujets', 0, 2013, 'Castor 2013', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 60, 50, 1, 0, 0, 0, 1, 4, 0, 0, NULL, '2013_all_aopronf.1480451025', NULL, NULL, 290, 'Open', 0, '', '', '', ''),
+(32, 'Entraînement 2014, niveau 6ème/5ème', 1, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_6_5_asknnc.1478452121', 10732, 571, 271, 'Open', 0, '', '', '', ''),
+(33, 'Entraînement 2014, niveau 4ème/3ème', 2, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_4_3_rqrokp', 8141, 369, 33, 'Open', 0, '', '', '', ''),
+(34, 'Entraînement 2014, niveau 2nde', 3, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_2_dpsdskj', 2088, 114, 33, 'Open', 0, '', '', '', ''),
+(35, 'Entraînement 2014, niveau 1ère/terminale', 4, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_1_0_dokssax', 1801, 66, 33, 'Open', 0, '', '', '', ''),
+(36, 'Entraînement 2014, niveau 2nde pro', 5, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_2_pro_wirjsnkc', 36, 1, 33, 'Open', 0, '', '', '', ''),
+(37, 'Entraînement 2014, niveau 1ère/terminale pro', 6, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_1_0_pro_oakdsakj', 37, 2, 33, 'Open', 0, '', '', '', ''),
+(51, 'Entraînement Algoréa 2015, premier tour', 0, 2015, 'Algoréa 2015 premier tour', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 0, 1, 0, 1, 1, 4, 0, 1, NULL, '2015_algorea_1_sakjlkjk', 0, 0, 33, 'Open', 0, '', '', '', ''),
+(53, 'Entraînement adapté aux CM1/CM2', 0, 2014, 'Castor 2014', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 0, 0, 1, 1, 4, 0, 0, NULL, '2014_expe_primaire_a', 0, 0, 33, 'Open', 0, '', '', '', ''),
+(54, 'Concours Castor 2015, tous niveaux', 0, 2015, 'Castor 2015', 'PreRanking', 'Visible', 1, 1, 0, '1890-11-29 23:00:00', '1899-11-29 23:00:00', NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 1, 1, 1, 1, 4, 0, 1, '', '2015_castor_askjksajx', 0, 0, 214, 'Open', 0, '', '', '', ''),
+(56, 'Entraînement 2015, tous niveaux', 0, 2015, 'Castor 2015', 'PastContest', 'Visible', 1, 0, 0, NULL, NULL, NULL, 0, 0, 0, 1, 1, 0, 45, 0, 1, 1, 1, 1, 1, 4, 0, 1, NULL, '2015_castor_ajakjtxnasj', 0, 0, 33, 'Open', 0, '', '', '', '');
 
 --
 -- Dumping data for table `contest_question`
@@ -739,21 +739,21 @@ INSERT INTO `contest_question` (`ID`, `contestID`, `questionID`, `minScore`, `no
 -- Dumping data for table `grade`
 --
 
-INSERT INTO `grade` (`ID`, `name`) VALUES
-(-4, 'Autre'),
-(-1, 'Professeur'),
-(4, 'CM1'),
-(5, 'CM2'),
-(6, '6 e.'),
-(7, '5 e.'),
-(8, '4 e.'),
-(9, '3 e.'),
-(10, 'seconde'),
-(11, 'première'),
-(12, 'terminale'),
-(13, 'seconde pro.'),
-(14, 'première pro.'),
-(15, 'terminale pro.');
+-- INSERT INTO `grade` (`ID`, `name`) VALUES
+-- (-4, 'Autre'),
+-- (-1, 'Professeur'),
+-- (4, 'CM1'),
+-- (5, 'CM2'),
+-- (6, '6 e.'),
+-- (7, '5 e.'),
+-- (8, '4 e.'),
+-- (9, '3 e.'),
+-- (10, 'seconde'),
+-- (11, 'première'),
+-- (12, 'terminale'),
+-- (13, 'seconde pro.'),
+-- (14, 'première pro.'),
+-- (15, 'terminale pro.');
 
 --
 -- Dumping data for table `group`
@@ -999,8 +999,27 @@ INSERT INTO `question` (`ID`, `key`, `folder`, `path`, `name`, `answerType`, `ex
 (274, '2016-FR-19-minmax-variables', 'algorea_2016', 'algorea_2016/2016-FR-19-minmax-variables/index.html', 'Variables', 0, '', 33),
 (275, '2016-FR-22-nested-pattern', 'algorea_2016', 'algorea_2016/2016-FR-22-nested-pattern/index.html', 'Dessin', 0, '', 33);
 
-INSERT INTO `synchro_version` (`iVersion`) VALUES
-(316);
+-- INSERT INTO `synchro_version` (`iVersion`) VALUES
+-- (316),
+-- (179113),
+-- (33),
+-- (260363),
+-- (260319),
+-- (260323),
+-- (260265),
+-- (260314),
+-- (263692),
+-- (260356),
+-- (260322),
+-- (260142),
+-- (260327),
+-- (260279),
+-- (260366),
+-- (260329),
+-- (260368),
+-- (260358),
+-- (261357)
+-- ;
 
 
 INSERT INTO `contest_question` (`ID`, `contestID`, `questionID`, `minScore`, `noAnswerScore`, `maxScore`, `options`, `order`, `iVersion`) VALUES
@@ -1022,12 +1041,12 @@ ALTER TABLE `group` CHANGE `maxCategory` `maxCategory` VARCHAR(30) CHARACTER SET
 ALTER TABLE `group` CHANGE `language` `language` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'fr';
 
 INSERT INTO `group` (`ID`, `schoolID`, `grade`, `gradeDetail`, `userID`, `name`, `nbStudents`, `nbTeamsEffective`, `nbStudentsEffective`, `contestID`, `minCategory`, `maxCategory`, `language`, `parentGroupID`, `code`, `password`, `expectedStartTime`, `startTime`, `noticePrinted`, `isPublic`, `isGenerated`, `bRecovered`, `participationType`, `iVersion`) VALUES
-(796142003655934888, 1358, 12, '', 1201, 'Castor 2015 : tous les niveaux', 100000, 8522, 8523, 56, '', '', '', NULL, 'yft7zkqt', 'zfvaxswk', '2015-12-10 22:00:00', '2018-09-27 13:52:33', 0, 1, 0, 0, 'Unofficial', 261357)
+(796142003655934888, 1358, 12, '', 1201, 'Castor 2015 : tous les niveaux', 100000, 8522, 8523, 56, '', '', '', NULL, 'yft7zkqt', 'zfvaxswk', '2015-12-10 22:00:00', '2018-09-27 13:52:33', 0, 1, 0, 0, 'Unofficial', 261357);
 
 
 INSERT INTO `algorea_registration` (`ID`, `firstName`, `lastName`, `genre`, `email`, `zipCode`, `grade`, `studentID`, `category`, `validatedCategory`, `schoolID`, `userID`, `code`, `contestantID`, `franceioiID`) VALUES
 (1, 'Mat', 'Mat', 2, '', '', 0, '', '', '', 1, 1, 'c42', NULL, NULL);
 
-UPDATE `group` SET isPublic = 0, startTime = '2020-01-01 00:00' WHERE ID = 796142003655934888
+UPDATE `group` SET isPublic = 0, startTime = '2020-01-01 00:00' WHERE ID = 796142003655934888;
 
 COMMIT;

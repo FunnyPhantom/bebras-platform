@@ -1,1 +1,1 @@
-ALTER TABLE `activity` CHANGE `TYPE` ENUM('load','attempt','submission','proxyload') CHARACTER SET utf8 COLLATE utf8-general-ci NOT NULL;
+ALTER TABLE `activity` MODIFY COLUMN `TYPE` ENUM('load','attempt','submission','proxyload') NOT NULL;
