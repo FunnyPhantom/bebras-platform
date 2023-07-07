@@ -81,7 +81,7 @@
 <?php
   flush();
   stylesheet_tag('/style.css');
-  if ($config->defaultLanguage == "ar") {
+  if ($config->defaultLanguage == "ar" || $config->defaultLanguage == "fa") {
      stylesheet_tag('/style_rtl.css');
   }
   if ($config->contestInterface->extraStylesheet) {
