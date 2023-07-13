@@ -1,3 +1,8 @@
+@font-face {
+   font-family: "vazir";
+   src: url("fonts/Vazirmatn/Vazirmatn-VariableFont_wght.ttf");
+}
+
 * {
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
@@ -9,7 +14,7 @@
 
 body {
   margin: 0px;
-  font-family: arial;
+  font-family: "vazir";
   font-size: 16px;
   overscroll-behavior: contain;
 }
@@ -90,7 +95,7 @@ a {
   margin: 10px 3em 0 32px;
 }
 #headerGroup {
-  font-family:"Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
+  font-family: "vazir", "Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
   text-transform:uppercase;
   text-align: left;
 }
@@ -110,7 +115,7 @@ a {
 }
 #login_link_to_home {
   text-transform: none;
-  font-family: Arial;
+  font-family: "vazir", Arial;
   margin-top: 20px;
   margin-bottom: 0;
   padding: 0 10px;
@@ -151,7 +156,7 @@ a {
 
 .tabTitle {
   font-size: 2em;
-  font-family:"Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
+  font-family:"vazir","Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
 }
 #mainNav {
   float: left;
@@ -287,7 +292,7 @@ a {
 }
 
 .div h3 {
-   font-family: "Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
+   font-family: "vazir", "Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
    font-size: 24px;
    /*font-color: #736451; Invalid, use color ? */
    text-align: left;
@@ -641,6 +646,7 @@ body.autoHeight .questionIframeHeader {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  font-family: vazir;
 }
 .btn-group {
   position: relative;
@@ -706,7 +712,7 @@ body.autoHeight .questionIframeHeader {
   border-color: #adadad;
 }
 .btn-icon {
-  font-family: 'Courier New', Inconsolata, 'Roboto Mono', 'PT Mono', 'Ubuntu', monospace;
+  font-family: "vazir",'Courier New', Inconsolata, 'Roboto Mono', 'PT Mono', 'Ubuntu', monospace;
 }
 .btn.selected {
   background-color: #2381bd;
