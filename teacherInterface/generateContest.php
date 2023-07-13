@@ -183,7 +183,15 @@ function myMkdir($path) {
 function myCopyFile($src, $dst, $adminOnly = false) {
    global $doLocal, $doAws;
    if ($doLocal) {
-      if (!copy($src, makeLocalPath($dst))) {
+      $localDst = makeLocalPath($dst);
+      $localDstDir = dirname($localDst);
+
+      // Create the missing directories in the destination path
+      if (!is_dir($localDstDir)) {
+         mkdir($localDstDir, 0777, true);
+      }
+
+      if (!copy($src, $localDst)) {
          throw new Exception('local copyFile failed');
       }
    }
