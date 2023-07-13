@@ -458,8 +458,8 @@ $browserIsMobile = $browser->isType('mobile', 'tablet', 'ereader');
               <span data-i18n="login_ask_gender"></span>
               <br/>
               <div class="divInput">
+                <input type="radio" id="genre1_female" name="genre1" value="1" autocomplete="off"><label for="genre1_female" data-i18n="login_female"></label>
                 <input type="radio" id="genre1_male" name="genre1" value="2" autocomplete="off"><label for="genre1_male" data-i18n="login_male"></label><br/>
-                <br /><input type="radio" id="genre1_female" name="genre1" value="1" autocomplete="off"><label for="genre1_female" data-i18n="login_female"></label>
               </div>
             </div>
             <p id="login-input-grade-1">
