@@ -166,6 +166,13 @@ $browserIsMobile = $browser->isType('mobile', 'tablet', 'ereader');
          <div id="contentPublicGroups" style="display:none;width:800px">
             <p><b data-i18n="[html]tab_public_contests_info"></b></p>
             <p id="publicContestExplanation"></p>
+            <div>
+              <h1>
+                <a href="index.php?team=hw1&p=1">
+                  برای ورود به تمرین اول اینجا را کلیک کنید
+                </a>    
+            </h1>
+            </div>
             <div id="listPublicGroups">
             </div>
             <p data-i18n="[html]tab_public_contests_organization"></p>
