@@ -171,7 +171,12 @@ $browserIsMobile = $browser->isType('mobile', 'tablet', 'ereader');
                 <a href="index.php?team=hw1&p=1">
                   برای ورود به تمرین اول اینجا را کلیک کنید
                 </a>    
-            </h1>
+              </h1>
+              <h1>
+                <a href="/hw2">
+                  برای ورود به تمرین دوم اینجا را کلیک کنید
+                </a>    
+              </h1>
             </div>
             <div id="listPublicGroups">
             </div>
