@@ -2681,9 +2681,9 @@ window.validateLoginForm = function() {
          } else if (!contestant.zipCode && !fieldsHidden.zipCode) {
             $("#LoginResult").html(strTeamMate + t("zipCode_missing"));
             return;
-         } else if (!contestant.studentId && !fieldsHidden.studentId) {
-            $("#LoginResult").html(strTeamMate + t("studentId_missing"));
-            return;
+         // } else if (!contestant.studentId && !fieldsHidden.studentId) {
+         //    $("#LoginResult").html(strTeamMate + t("studentId_missing"));
+         //    return;
 //         } else if (!contestant.phoneNumber && !fieldsHidden.phoneNumber) {
 //            $("#LoginResult").html(strTeamMate + t("phoneNumber_missing"));
 //            return;
