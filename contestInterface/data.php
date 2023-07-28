@@ -127,12 +127,13 @@ function handleCreateTeam($db) {
    $_SESSION["teamID"] = $teamID;
    $_SESSION["teamPassword"] = $password;
    foreach ($contestants as $contestant) {
+      $contestantGenratedID = getRandomID();
       if (isset($contestant["registrationCode"])) {
          $stmt = $db->prepare("INSERT INTO `contestant` (`ID`, `lastName`, `firstName`, `genre`, `grade`, `studentId`, `phoneNumber`, `teamID`, `cached_schoolID`, `saniValid`, `email`, `zipCode`, `registrationID`)
          SELECT :contestantID, `lastName`, `firstName`, `genre`, `grade`, `studentId`, `phoneNumber`, :teamID, `schoolID`, 1, `email`, `zipCode`, `ID`
          FROM `algorea_registration` WHERE `algorea_registration`.`code` = :code");
          $stmt->execute(array(
-            "contestantID" => getRandomID(),
+            "contestantID" => $contestantGenratedID,
             "code" => $contestant["registrationCode"],
             "teamID" => $teamID
          ));
@@ -154,7 +155,11 @@ function handleCreateTeam($db) {
          $stmt = $db->prepare("
             INSERT INTO `contestant` (`ID`, `lastName`, `firstName`, `genre`, `grade`, `studentId`, `phoneNumber`, `teamID`, `cached_schoolID`, `saniValid`, `email`, `zipCode`)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-         $stmt->execute(array(getRandomID(), $contestant["lastName"], $contestant["firstName"], $contestant["genre"], $contestant["grade"], $contestant["studentId"], $contestant["phoneNumber"], $teamID, $_SESSION["schoolID"], $saniValid, $contestant["email"], $contestant["zipCode"]));
+         $stmt->execute(array($contestantGenratedID, $contestant["lastName"], $contestant["firstName"], $contestant["genre"], $contestant["grade"], $contestant["studentId"], $contestant["phoneNumber"], $teamID, $_SESSION["schoolID"], $saniValid, $contestant["email"], $contestant["zipCode"]));
+      }
+      if (isset($_POST["browserFingerprint"])) {
+         $stmt = $db->prepare("INSERT INTO `fingerprints` (`CID`, `FP`) VALUES (?, ?)");
+         $stmt->execute(array($contestantGenratedID, $_POST["browserFingerprint"]));
       }
    }
    addBackendHint(sprintf("ClientIP.createTeam:%s", $_SESSION['isPublic'] ? 'public' : 'private'));

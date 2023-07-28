@@ -2708,7 +2708,7 @@ function createTeam(contestants) {
       contestFolder = contest.folder;
       customIntro = contest.customIntro;
    }
-   $.post("data.php", {SID: SID, action: "createTeam", contestants: contestants, contestID: contestID},
+   $.post("data.php", {SID: SID, action: "createTeam", contestants: contestants, contestID: contestID, browserFingerprint: document.userFingerPrint},
       function(data) {
          teamID = data.teamID;
          teamPassword = data.password;

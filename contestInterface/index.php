@@ -12,6 +12,12 @@
 <?php
   script_tag('/bower_components/jquery/jquery.min.js');
 ?>
+
+<script type="module">
+  import gbfp from "./bower_components/get-browser-fingerprint/src/index.js";
+  document.userFingerPrint = gbfp();
+</script>
+
 <script type="text/javascript">
   window.contestsRoot = <?= json_encode(upgrade_url($config->teacherInterface->sAbsoluteStaticPath.'/contests')) ?>;
   window.sAbsoluteStaticPath = <?= json_encode(upgrade_url($config->teacherInterface->sAbsoluteStaticPath.'/')) ?>;
