@@ -2136,11 +2136,24 @@ window.groupWasChecked = function(data, curStep, groupCode, getTeams, isPublic, 
       $("#div" + curStep).hide();
       hideLoginFields(data);
       if ((curStep === "CheckGroup") || (curStep === "StartContest")) {
+         const [success, contestantsOrErr] = readCacheContestant();
+         if (!success) {
+            console.log("cache failed. Reason:", contestantsOrErr);
+         }
+         let userConfirmedCache = false;
+         if (success) {
+            userConfirmedCache = confirm(`شما به نظر ${`${contestantsOrErr[1].firstName} ${contestantsOrErr[1].lastName}`} با ایمیل ${contestantsOrErr[1].email} هستید. در صورت صحیح بودن اطلاعات شما، آیا مایل هستید که از اطلاعات قبلی برای ثبت نام استفاده کنید؟`);
+         }
+         
          if (isPublic) {
             window.setNbContestants(1);
             createTeam([{ lastName: "Anonymous", firstName: "Anonymous", genre: 2, email: null, zipCode: null}]);
+         } else if (userConfirmedCache) {
+            window.setNbContestants(1);
+            createTeam(contestantsOrErr);
          } else {
             setContestBreadcrumb();
+            removeCachedContestant();
             $("#divDescribeTeam").show();
             $("#divAccessContest").show();
             if (data.askParticipationCode == 0) {
@@ -2693,9 +2706,36 @@ window.validateLoginForm = function() {
          }
       }
    }
+   cacheContestant(contestants);
    Utils.disableButton("buttonLogin"); // do not re-enable
    createTeam(contestants);
 };
+
+function cacheContestant(contestants) {
+   localStorage.setItem("cached_contestant", JSON.stringify(contestants));
+}
+
+const LOAD_ERRORS = {
+   "NO_CACHE": "NO_CACHE",
+   "ERROR_PARSING": "ERROR_PARSING"
+}
+
+function removeCachedContestant() {
+   localStorage.removeItem("cached_contestant")
+}
+
+function readCacheContestant() {
+   var contestants = localStorage.getItem("cached_contestant");
+   if (!contestants) {
+      return [false, LOAD_ERRORS.NO_CACHE];
+   }
+   try {
+      contestants = JSON.parse(contestants);
+      return [true, contestants];
+   } catch {
+      return [false, LOAD_ERRORS.ERROR_PARSING]
+   }
+}
 
 /*
  * Creates a new team using contestants information
