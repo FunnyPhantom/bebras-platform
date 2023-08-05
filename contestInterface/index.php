@@ -188,6 +188,11 @@ $browserIsMobile = $browser->isType('mobile', 'tablet', 'ereader');
                   برای ورود به تمرین سوم اینجا را کلیک کنید
                 </a>    
               </h1>
+              <h1>
+                <a href="/hw4">
+                  برای ورود به تمرین چهارم اینجا را کلیک کنید
+                </a>    
+              </h1>
             </div>
             <div id="listPublicGroups">
             </div>
