@@ -10,3 +10,6 @@
 [submodule "teacherInterface/bebras-tasks"]
 	path = teacherInterface/bebras-tasks
 	url = https://github.com/learn-python-ir/bebras-tasks.git
+[submodule "teacherInterface/__old_bebras-tasks"]
+	path = teacherInterface/__old_bebras-tasks
+	url = https://github.com/France-ioi/bebras-tasks.git
