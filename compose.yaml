@@ -4,15 +4,15 @@ services:
         context: .
         dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "3200:3200"
   mysql:
     image: mysql/mysql-server:5.7
+    volumes:
+      - ./mysql-database-be-careful-with-this:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test
+      MYSQL_USER: concour
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: beaver_contest
     ports:
       - "3306:3306"
-networks:
-    default:
-        external:
-          name: "sh-bebras-platform-network"
+
