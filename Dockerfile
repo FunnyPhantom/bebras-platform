@@ -33,11 +33,13 @@ RUN apt-get update && apt-get install -y \
     php7.2-sqlite3 \
     php7.2-mysql
 
-# Install Node.js and npm
-RUN curl -sL https://deb.nodesource.com/setup_22.x | bash -
+# Intall composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Node.js version 18
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
-# Install Bower
 RUN npm install -g bower
 
 # Clean up
@@ -49,13 +51,19 @@ WORKDIR /var/www/html
 # Copy project files into docker image
 COPY . .
 
+# Install PHP dependencies
+RUN composer install
+
 # Change working directory to contestInterface
 WORKDIR /var/www/html/contestInterface
 # Run Bower install
 RUN bower install --allow-root
 
-# Expose port 80
-EXPOSE 3200
 
-# Start PHP built-in server
-CMD ["php", "-S", "0.0.0.0:3200", "-t", "/var/www/html"]
+# Change Working directory to teacherInterface
+WORKDIR /var/www/html/teacherInterface
+# Run Bower install
+RUN bower install --allow-root
+
+# Expose port 80
+EXPOSE 80

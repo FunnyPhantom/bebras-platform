@@ -3,8 +3,7 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
-    ports:
-      - "3200:3200"
+
   mysql:
     image: mysql/mysql-server:5.7
     volumes:
@@ -13,6 +12,3 @@ services:
       MYSQL_USER: concour
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: beaver_contest
-    ports:
-      - "3306:3306"
-
