@@ -1,0 +1,18 @@
+services:
+  core:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  mysql:
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+    ports:
+      - "3306:3306"
+networks:
+    default:
+        external:
+          name: "sh-bebras-platform-network"
