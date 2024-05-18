@@ -9,4 +9,4 @@
 	url = https://github.com/pivaldi/pi-google-maps-api.git
 [submodule "teacherInterface/bebras-tasks"]
 	path = teacherInterface/bebras-tasks
-	url = https://github.com/France-ioi/bebras-tasks.git
+	url = https://github.com/learn-python-ir/bebras-tasks.git
