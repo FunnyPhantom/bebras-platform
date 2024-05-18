@@ -8,6 +8,7 @@
 /.composer
 /node_modules/
 /mysql-database-be-careful-with-this
+/contests-questions-data-be-careful-with-this
 
 .idea
 
