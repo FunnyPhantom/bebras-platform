@@ -23,5 +23,5 @@ volumes:
     driver: local
     driver_opts:
         type: none
-        device: ../mysql-database-be-careful-with-this
+        device: ./../mysql-database-be-careful-with-this
         o: bind
