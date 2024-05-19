@@ -15,7 +15,7 @@ services:
 #      - "admin-bebras.local:127.0.0.1"
 
   mysql:
-    image: mysql/mysql-server:5.7
+    image: mariadb:10.4
     user: root
     volumes:
       - ./mysql-database-be-careful-with-this:/var/lib/mysql:rw
