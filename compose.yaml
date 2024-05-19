@@ -16,7 +16,6 @@ services:
 
   mysql:
     image: mysql/mysql-server:5.7
-    user: 0:0
     volumes:
       - db_data:/var/lib/mysql
     environment:
@@ -26,5 +25,5 @@ volumes:
     driver: local
     driver_opts:
         type: none
-        device: ./mysql-database-be-careful-with-this
+        device: ../mysql-database-be-careful-with-this
         o: bind
