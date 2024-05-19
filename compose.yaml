@@ -7,10 +7,10 @@ services:
       - ./contests-questions-data-be-careful-with-this:/var/www/html/bebras-platform/contestInterface/contests
     ports:
       - "80:80"
-    extra_hosts:
-      - "practice-bebras.local:127.0.0.1"
-      - "soal-bebras.local:127.0.0.1"
-      - "admin-bebras.local:127.0.0.1"
+    extra_hosts: {}
+#      - "practice-bebras.local:127.0.0.1"
+#      - "soal-bebras.local:127.0.0.1"
+#      - "admin-bebras.local:127.0.0.1"
 
   mysql:
     image: mysql/mysql-server:5.7
