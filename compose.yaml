@@ -22,4 +22,4 @@ services:
         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         MYSQL_USER: concour
         MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    entrypoint: ["bash"]
+    entrypoint: ["top", "-b"]
