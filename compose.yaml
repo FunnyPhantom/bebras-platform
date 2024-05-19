@@ -3,6 +3,8 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
+        args:
+          USE_IR: ${USE_IR}
     volumes:
       - ./contests-questions-data-be-careful-with-this:/var/www/html/bebras-platform/contestInterface/contests
     ports:

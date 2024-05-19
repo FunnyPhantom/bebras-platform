@@ -5,6 +5,15 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
+ARG USE_IR=false
+
+WORKDIR /etc/apt
+COPY ubuntu-source.list.ir /etc/apt/sources.list.ir
+RUN if [ "$USE_IR" = "true" ]; then mv sources.list.ir sources.list; fi
+
+RUN echo "Building with $(if [ "$USE_IR" = "true" ]; then echo "Iranian"; else echo "default"; fi) sources"
+
+
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
