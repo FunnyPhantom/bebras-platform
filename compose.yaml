@@ -16,9 +16,9 @@ services:
 
   mysql:
     image: mysql/mysql-server:5.7
-    user: 0:0
+    user: root
     volumes:
-      - ./mysql-database-be-careful-with-this:/var/lib/mysql
+      - `./mysql-database-be-careful-with-this:/var/lib/mysql:rw`
     environment:
         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         MYSQL_USER: concour
