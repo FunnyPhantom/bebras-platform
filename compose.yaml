@@ -18,8 +18,6 @@ services:
     image: mysql/mysql-server:5.7
     volumes:
       - db_data:/var/lib/mysql
-    environment:
-      MYSQL_DATABASE: beaver_contest
 volumes:
   db_data:
     driver: local
