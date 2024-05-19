@@ -22,4 +22,4 @@ services:
         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         MYSQL_USER: concour
         MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    entrypoint: ["sh", "-d", "while true; do sleep 1000; done"]
+    entrypoint: ["sh", "-c", "while true; do sleep 1000; done"]
