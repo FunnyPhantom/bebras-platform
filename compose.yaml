@@ -18,6 +18,13 @@ services:
     image: mysql/mysql-server:5.7
     user: 0:0
     volumes:
-      - ./mysql-database-be-careful-with-this:/var/lib/mysql
+      - db_data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: beaver_contest
+volumes:
+  db_data:
+    driver: local
+    driver_opts:
+        type: none
+        device: ./mysql-database-be-careful-with-this
+        o: bind
