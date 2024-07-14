@@ -1,25 +1,74 @@
+version: '3'
+networks:
+  app-network:
+    driver: bridge
+
 services:
   core:
     build:
-        context: .
-        dockerfile: Dockerfile
-        args:
-          USE_IR: ${USE_IR}
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USE_IR: ${USE_IR}
     volumes:
       - ./contests-questions-data-be-careful-with-this:/var/www/html/bebras-platform/contestInterface/contests
+      - ./letsencrypt:/etc/letsencrypt
+      - ./certbot-etc:/var/lib/letsencrypt
     ports:
       - "80:80"
+      - "443:443"
+        #    network_mode: "host"
+    depends_on:
+      - certbot
+      - mysql
     extra_hosts: {}
+    networks:
+      - app-network
 #      - "practice-bebras.local:127.0.0.1"
 #      - "soal-bebras.local:127.0.0.1"
 #      - "admin-bebras.local:127.0.0.1"
 
   mysql:
-    image: mariadb:10.4
+    image: mysql/mysql-server:5.7
     user: root
+    #network_mode: "host"
     volumes:
       - ./mysql-database-be-careful-with-this:/var/lib/mysql:rw
     environment:
-        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-        MYSQL_USER: concour
-        MYSQL_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - app-network
+
+  certbot:
+    image: certbot/dns-cloudflare
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
+      - ./certbot-etc:/var/lib/letsencrypt
+      - ./cloudflare:/cloudflare
+    environment:
+      - CERTBOT_DNS_CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --dns-cloudflare --dns-cloudflare-credentials /cloudflare/cloudflare.ini; sleep 12h & wait $${!}; done;'"
+    restart: unless-stopped
+    networks:
+      - app-network
+    #network_mode: "host"
+
+
+  wordpress:
+    build:
+      context: ./wordpress
+    container_name: wordpress_container
+    env_file: .env
+    volumes:
+      - ./wordpress_data:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+    ports:
+      - "8081:80"

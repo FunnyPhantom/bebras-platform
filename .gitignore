@@ -4,10 +4,10 @@
 /teacherInterface/bower_components/
 /teacherInterface/beaver_tasks/
 /logs/
-/config_local.php
+/config_local.php*
 /.composer
 /node_modules/
-/mysql-database-be-careful-with-this
+/mysql-database-be-careful-with-this*
 /contests-questions-data-be-careful-with-this
 
 .idea
@@ -15,3 +15,10 @@
 .env
 
 /apache-confs/.htpasswd
+
+wordpress
+wordpress_data
+letsencrypt
+cloudflare
+
+nohup.out

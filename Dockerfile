@@ -28,7 +28,8 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     pkg-config \
     libssl-dev \
-    apache2
+    apache2 \
+    mysql-client
 
 # Enable apache modules
 RUN a2enmod rewrite
@@ -107,10 +108,18 @@ EXPOSE 80
 # Copy apache configuration file
 COPY apache-confs/base.conf /etc/apache2/sites-available/000-default.conf
 COPY apache-confs/.htpasswd /etc/apache2/.htpasswd
+COPY apache-confs/ssl.conf /etc/apache2/sites-available/default-ssl.conf
+COPY start-apache.sh /usr/local/bin/start-apache.sh  
+
 
 # enable apache configuration
 RUN a2ensite 000-default.conf
-RUN service apache2 restart
+RUN chmod +x /usr/local/bin/start-apache.sh 
+CMD ["/usr/local/bin/start-apache.sh"]  
+
+# Enable apache configuration
+#RUN a2ensite default-ssl.conf
+#RUN service apache2 restart
 
 # Start apache
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+#CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

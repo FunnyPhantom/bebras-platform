@@ -1,0 +1,12 @@
+mysql-database-be-careful-with-this
+letsencrypt
+certbot-etc
+cloudflare
+config_local.php.old*
+didList.md
+.idea
+.dockerignore
+contests-questions-data-be-careful-with-this
+mysql-database-be-careful-with-this*
+
+nohup.out
