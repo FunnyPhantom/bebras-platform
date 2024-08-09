@@ -83,6 +83,9 @@ WORKDIR /var/www/html/bebras-platform
 # Copy project files into docker image
 COPY . .
 
+# Change ownership of the contestInterface directory to www-data
+RUN chown -R www-data:www-data /var/www/html/bebras-platform/contestInterface
+
 # Install PHP dependencies
 RUN composer install
 
@@ -108,7 +111,7 @@ EXPOSE 80
 # Copy apache configuration file
 COPY apache-confs/base.conf /etc/apache2/sites-available/000-default.conf
 COPY apache-confs/.htpasswd /etc/apache2/.htpasswd
-COPY apache-confs/ssl.conf /etc/apache2/sites-available/default-ssl.conf
+# COPY apache-confs/ssl.conf /etc/apache2/sites-available/default-ssl.conf
 COPY start-apache.sh /usr/local/bin/start-apache.sh  
 
 
