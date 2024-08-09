@@ -332,8 +332,15 @@ $viewsModels = array(
          "city" => array("tableName" => "school"),
          "name" => array("tableName" => "school"),
          "algoreaCode" => array("tableName" => "contestant"),
-         "algoreaCategory" => array("tableName" => "algorea_registration", "fieldName" => "category"),
-         "franceioiID" => array("tableName" => "algorea_registration"),
+         "algoreaCategory" => array(
+            "tableName" => "algorea_registration", 
+            "fieldName" => "category",
+            "sql" => "MAX(`algorea_registration`.`category`)"  // Using MAX as an aggregate function
+         ),
+         "franceioiID" => array(
+            "tableName" => "algorea_registration",
+            "sql" => "MAX(`algorea_registration`.`franceioiID`)"  // Using MAX as an aggregate function
+         ),
          "groupName" => array("tableName" => "full_groups", "fieldName" => "name")
       ),
       "filters" => array(
@@ -816,19 +823,22 @@ $viewsModels = array(
          ),
          "firstName" => array(
             "tableName" => "user",
-            "access" => array("write" => array(), "read" => array())
+            "access" => array("write" => array(), "read" => array()),
+            "groupBy" => "`user`.`ID`"
          ),
          "accessTypeGiven" => array(
             "type" => "string",
             "tableName" => "user_user_target",
             "fieldName" => "accessType",
-            "access" => array("write" => array("admin", "user"), "read" => array("admin", "user"))
+            "access" => array("write" => array("admin", "user"), "read" => array("admin", "user")),
+            "sql" => "MAX(`user_user_target`.`accessType`)"  // Using MAX as an aggregate function
          ),
          "accessTypeReceived" => array(
             "type" => "string",
             "tableName" => "user_user_source",
             "fieldName" => "accessType",
-            "access" => array("write" => array("admin"), "read" => array("admin", "user"))
+            "access" => array("write" => array("admin"), "read" => array("admin", "user")),
+            "sql" => "MAX(`user_user_source`.`accessType`)"  // Using MAX as an aggregate function
          ),
          "gender" => array(
             "tableName" => "user",
@@ -846,7 +856,7 @@ $viewsModels = array(
                            "((`[PREFIX]user_user_source`.`targetUserID` = :[PREFIX_FIELD]userID) OR (`[PREFIX]user_user_source`.`targetUserID` IS NULL)))"
          ),
       )
-   ),   
+   ),
 );
 
 ?>
