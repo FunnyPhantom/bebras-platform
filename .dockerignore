@@ -8,6 +8,7 @@ didList.md
 .dockerignore
 contests-questions-data-be-careful-with-this
 mysql-database-be-careful-with-this*
+.git
 
 nohup.out
 wordpress_data
