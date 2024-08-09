@@ -2757,7 +2757,8 @@ function createTeam(contestants) {
          $("#divCheckNbContestants").hide();
          $("#divAccessContest").hide();
          $("#teamPassword").html(data.password);
-         $("#divPassword").show();
+         // $("#divPassword").show();
+         loadContestData(contestID, contestFolder);
       }, "json");
 }
 
